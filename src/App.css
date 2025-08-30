@@ -1,0 +1,201 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ToDo Input */
+.todo-input-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.todo-input-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.todo-input-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-input-container button:hover {
+  background-color: #0973e6;
+}
+
+/* ToDo List Items */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.todo-item span {
+  cursor: pointer;
+}
+
+.todo-item.done span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-item button:hover {
+  background-color: #a71d2a;
+}
+
+.app {
+  background: #fff;
+  padding: 20px;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* اطمینان از اینکه padding توی محاسبه عرض حساب میشه */
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+  .todo-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* شامل textarea هم بشه */
+  .todo-input-container input,
+  .todo-input-container textarea,
+  .todo-input-container button {
+    width: 100%;
+    max-width: 100%; /* جلوگیری از اورفلو */
+    flex: none;      /* نذار flex اندازه رو بشکنه */
+  }
+ h1{
+  font-size: 45px;
+ } 
+ .todo-item button {
+  padding: 10 2px;
+  font-size: 12px;
+    border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+ }
+ .todo-input-container button {
+  padding: 7px 11px;
+  font-size: 15px; 
+}
+}
+
+/* قطع کامل هر چیزی که روی فوکوس input می‌افتد */
+.app .todo-input-container input:focus,
+.app .todo-input-container input:focus-visible,
+.app .todo-input-container input:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ccc !important;     /* اگر می‌خوای رنگ مرز همون حالت عادی بمونه */
+  /* یا اگر آبی می‌خوای:  border-color: #007bff !important; */
+}
+
+/* برخی مرورگرها (قدیمی/فایرفاکس) */
+.app .todo-input-container input::-moz-focus-inner {
+  border: 0 !important;
+}
+
+/* سافاری/کروم موبایل: حذف هایلایت لمس */
+input {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.app-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}

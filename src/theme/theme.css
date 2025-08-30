@@ -1,0 +1,136 @@
+/* === Theme tokens === */
+:root {
+  --bg: #f6f7fb;
+  --text: #222;
+  --muted: #888;
+
+  --card: #ffffff;
+  --shadow: 0 4px 15px rgba(0,0,0,.1);
+
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+
+  --danger: #dc3545;
+  --danger-hover: #a71d2a;
+
+  --border: #ccc;
+}
+
+:root[data-theme="dark"] {
+  --bg: #031d51;
+  --text: #e5e7eb;
+  --muted: #9aa4b2;
+
+  --card: #171b23;
+  --shadow: 0 8px 24px rgba(0,0,0,.45);
+
+  --primary: #3b82f6;
+  --primary-hover: #97a9ce;
+
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+
+  --border: #2b3442;
+}
+
+/* === Transition نرم هنگام تغییر تم === */
+html, body, .app, .todo-item, input, textarea, button { 
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+/* === عمومی === */
+body { background: var(--bg); color: var(--text); }
+.app { background: var(--card); box-shadow: var(--shadow); border-radius: 12px; }
+h1 { color: var(--text); }
+
+/* === ToDo Input === */
+.todo-input-container input,
+.todo-input-container textarea {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+}
+
+.todo-input-container button {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  transition: background-color .15s ease, transform .1s ease;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .todo-input-container button:hover { 
+    background: var(--primary-hover); 
+    transform: translateY(-1px);
+  }
+}
+
+.todo-input-container button:active { transform: translateY(0); }
+.todo-input-container button:disabled { opacity: .6; cursor: not-allowed; }
+
+/* === ToDo List Items === */
+.todo-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  border-radius: 12px;
+}
+.todo-item.done span { color: var(--muted); }
+.todo-item button { 
+  background: var(--danger); 
+  color:#fff; 
+  border-radius: 12px;
+}
+.todo-item button:hover { background: var(--danger-hover); }
+
+/* === فوکوس قابل‌دسترسی === */
+.todo-input-container input:focus-visible,
+.todo-input-container textarea:focus-visible,
+.theme-toggle:focus-visible,
+.todo-item button:focus-visible,
+.todo-input-container button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.35);
+  border-color: var(--primary);
+}
+
+/* وقتی با ماوس کلیک شده، فوکوس مرئی نشون داده نشه */
+.todo-input-container input:focus:not(:focus-visible),
+.todo-input-container textarea:focus:not(:focus-visible),
+.todo-input-container button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* === Autofill fix برای کروم/سافاری === */
+.todo-input-container input:-webkit-autofill,
+.todo-input-container textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--card) inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+:root[data-theme="dark"] .todo-input-container input:-webkit-autofill,
+:root[data-theme="dark"] .todo-input-container textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--card) inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+
+/* === دکمه تغییر تم === */
+.theme-toggle {
+  display:inline-flex; 
+  align-items:center; 
+  gap:.5rem;
+  padding:.4rem .8rem; 
+  border-radius:999px;
+  border:1px solid var(--border);
+  background: var(--card); 
+  color: var(--text);
+  cursor:pointer; 
+  font-size:14px;
+}
+
+.theme-toggle {
+  background: red !important;
+  color: white !important;
+  margin-top: 18px;
+}
