@@ -34,6 +34,7 @@ const TodoInput = ({ addTask }: TodoInputProps) => {
         placeholder="New Task..."
         onKeyDown={(e) => e.key === "Enter" && handleAdd()}
       />
+      
       <button ref={btnRef}
         type="button"
         onClick={(e) => {
