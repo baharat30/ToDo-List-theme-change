@@ -1,74 +1,29 @@
-<<<<<<< HEAD
-# ToDo-List-theme-change
-A simple To-Do List app built with React + TypeScript, featuring localStorage persistence and a light/dark theme switcher.
-=======
-# React + TypeScript + Vite
+# ToDo List + Theme Switcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small project I built with **React, TypeScript and Vite** to practice state management and responsive UI.  
+The app is a simple todo list where you can add / remove tasks, mark them as done, and switch between light and dark mode.  
+Data is stored in `localStorage` so it doesn’t get lost after refresh.
 
-Currently, two official plugins are available:
+## Features
+- Add, delete and complete tasks
+- Dark / light theme toggle
+- Data persistence with localStorage
+- Responsive design for mobile and desktop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
+[View it here](https://baharat30.github.io/ToDo-List-theme-change/)
 
-## Expanding the ESLint configuration
+## Screenshots:
+ Light mode ✨
+![Light theme](docs/1.png)
+ Dark mode 🌙
+![Dark theme](docs/2.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation
+If you want to run it locally:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
->>>>>>> fcbdbd6 (Add project files)
+```bash
+git clone https://github.com/baharat30/ToDo-List-theme-change.git
+cd ToDo-List-theme-change
+npm install
+npm run dev
